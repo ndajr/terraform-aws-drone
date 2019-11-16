@@ -1,7 +1,7 @@
 locals {
   env          = "dev"
   profile      = "374047294805"
-  service_name = "terraform-vpc"
+  service_name = "terraform-plat"
 
   tags = {
     Name        = "${local.profile}-${local.service_name}"
