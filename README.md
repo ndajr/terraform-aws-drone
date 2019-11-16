@@ -1,4 +1,4 @@
-# terraform-vpc
+# terraform-plat
 
 ```
 source ./scripts/init.sh
