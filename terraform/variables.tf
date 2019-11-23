@@ -1,7 +1,3 @@
-terraform {
-  required_version = "~> 0.12.0"
-}
-
 variable "profile" {
   type        = string
   description = "AWS profile in use (e.g. 374047294805)"

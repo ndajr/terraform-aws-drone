@@ -31,14 +31,14 @@ endif
 plan: --clean --clone_temporary_terraform
 	@echo "\nPlanning dev infra\n"
 	cd $(--TERRAFORM_TEMPORARY_NAME) && \
-	terraform init && \
+	terraform init -backend-config config/dev/backend.tfvars && \
 	tflint && \
-	terraform plan -var-file=config/dev.tfvars
+	terraform plan -var-file config/dev/terraform.tfvars
 
 apply: plan
 	@echo "\n$(--YELLOW)Running terraform apply for platform environment.\n\n $(--NC)Do you wish to continue? (y/n)" && read ans && [ $$ans == y ]
 	cd $(--TERRAFORM_TEMPORARY_NAME) && \
-	terraform apply -var-file=config/dev.tfvars
+	terraform apply -var-file=config/dev/terraform.tfvars
 
 ##################################
 ## Utils
