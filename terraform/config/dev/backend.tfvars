@@ -1,0 +1,6 @@
+region         = "eu-central-1"
+bucket         = "374047294805-tfstate"
+key            = "platform/terraform-aws-drone/dev/service.tfstate"
+dynamodb_table = "374047294805-tfstate-lock"
+profile        = "374047294805"
+encrypt        = "1"
