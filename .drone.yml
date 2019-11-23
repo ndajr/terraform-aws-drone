@@ -1,0 +1,11 @@
+kind: pipeline
+type: docker
+name: build
+
+steps:
+  - name: lint-infra
+    image: wata727/tflint
+    commands:
+      - tflint terraform 
+    when:
+      event: push
