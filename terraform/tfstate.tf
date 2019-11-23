@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "backend-s3" {
-  bucket = "${local.profile}-tfstate"
+  bucket = "${var.profile}-tfstate"
 
   versioning {
     enabled = true
@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "backend-s3" {
 }
 
 resource "aws_dynamodb_table" "backend-dynamo" {
-  name           = "${local.profile}-tfstate-lock"
+  name           = "${var.profile}-tfstate-lock"
   hash_key       = "LockID"
   read_capacity  = 20
   write_capacity = 20

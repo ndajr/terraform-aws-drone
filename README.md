@@ -1,14 +1,19 @@
-# terraform-plat
+# terraform-aws-drone
 
-Adding a s3 and dynamodb tfstate lock for terraform state.
+Base structure for Drone CI/CD pipeline using terraform to create AWS resources.
 
-1. aws configure
-2. export all aws variables in your terminal
+## Usage
 
+First configure the aws credentials using the [aws-cli](https://aws.amazon.com/cli/) command **aws configure**
+
+### Plan
+
+```sh
+make plan
 ```
-source ./scripts/init.sh
-```
 
-3. cd terraform
-4. terraform init
-5. terraform apply
+### Apply
+
+```sh
+make apply
+```

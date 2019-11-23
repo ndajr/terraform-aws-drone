@@ -1,11 +1,9 @@
 locals {
-  env          = "dev"
-  profile      = "374047294805"
-  service_name = "terraform-plat"
+  service_name = "terraform-aws-drone"
 
   tags = {
-    Name        = "${local.profile}-${local.service_name}"
-    Environment = local.env
+    Name        = "${var.profile}-${local.service_name}"
+    Environment = var.env
     Application = local.service_name
     Service     = local.service_name
     GitRepo     = "github.com/neemiasjnr/${local.service_name}"
